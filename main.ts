@@ -56,6 +56,9 @@ function loginPrompt () {
         } else {
             Curent_user = selection
             loggedIn = selectedIndex
+            if (blockSettings.exists("moreApps" + loggedIn)) {
+                blockSettings.writeStringArray("moreApps" + loggedIn, [])
+            }
             userMenu.close()
             desktop()
         }
@@ -136,7 +139,6 @@ function newUser () {
     Name = game.askForString("Name:")
     usernames.push(Name)
     blockSettings.writeStringArray("usernames", usernames)
-    blockSettings.writeStringArray("moreApps" + loggedIn, [])
     game.splash("User Created!!!")
     loginPrompt()
 }
