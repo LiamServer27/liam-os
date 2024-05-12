@@ -73,7 +73,7 @@ function loginPrompt () {
         if (selection == "Add") {
             newUser()
         } else {
-            Curent_user = selection
+            currentUser = selection
             loggedIn = selectedIndex
             if (blockSettings.exists("moreApps" + loggedIn)) {
                 blockSettings.writeStringArray("moreApps" + loggedIn, [])
@@ -85,7 +85,7 @@ function loginPrompt () {
 }
 function desktop () {
     scene.setBackgroundImage(assets.image`Green`)
-    myMenu = miniMenu.createMenuFromArray([
+    homeMenuList = [
     miniMenu.createMenuItem("Logout", assets.image`log out`),
     miniMenu.createMenuItem("Liam Store", img`
         ...ffffffffffff...
@@ -126,7 +126,8 @@ function desktop () {
         . f f f f f f f f f f f f f f f . 
         . . . . . . . . . . . . . . . . . 
         `)
-    ])
+    ]
+    myMenu = miniMenu.createMenuFromArray(homeMenuList)
     myMenu.setDimensions(scene.screenWidth(), scene.screenHeight())
     myMenu.setPosition(scene.screenWidth() / 2, scene.screenHeight() / 2)
     myMenu.setMenuStyleProperty(miniMenu.MenuStyleProperty.Rows, 4)
@@ -180,7 +181,7 @@ function Menu_Press (Value: string) {
         loginPrompt()
     }
     if (Value == "Show Name") {
-        game.splash("Your Name Is:", Curent_user)
+        game.splash("Your Name Is:", currentUser)
     }
     if (Value == "Liam Store") {
         game.splash("WIP", "-@TannerVoltageAlt")
@@ -199,8 +200,9 @@ function Menu_Press (Value: string) {
 let shopMenu: miniMenu.MenuSprite = null
 let Name = ""
 let myMenu: miniMenu.MenuSprite = null
+let homeMenuList: miniMenu.MenuItem[] = []
 let loggedIn = 0
-let Curent_user = ""
+let currentUser = ""
 let userMenu: miniMenu.MenuSprite = null
 let usernames: string[] = []
 let userMenuList: miniMenu.MenuItem[] = []
