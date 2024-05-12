@@ -182,10 +182,12 @@ function Menu_Press (Value: string) {
     if (Value == "Show Name") {
         game.splash("Your Name Is:", Curent_user)
     }
+    if (Value == "Liam Store") {
+        game.splash("WIP", "-@TannerVoltageAlt")
+    }
     if (Value == "Voltage Click") {
         myMenu.close()
         if (!(blockSettings.exists("com.voltage.clicker/clicks" + loggedIn))) {
-            blockSettings.writeNumber("com.voltage.clicker/clicks" + loggedIn, 0)
             game.splash("Press A to click")
             blockSettings.writeNumber("com.voltage.clicker/clicks" + loggedIn, 1)
             voltageClickAgain()
