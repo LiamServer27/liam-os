@@ -79,15 +79,14 @@ function loginPrompt () {
                 blockSettings.writeStringArray("moreApps" + loggedIn, [])
             }
             userMenu.close()
+            music.play(music.stringPlayable("C D E F G A B C5 ", 953), music.PlaybackMode.InBackground)
             desktop()
         }
     })
 }
 function desktop () {
     scene.setBackgroundImage(assets.image`Green`)
-    homeMenuList = [
-    miniMenu.createMenuItem("Logout", assets.image`log out`),
-    miniMenu.createMenuItem("Liam Store", img`
+    homeMenuList = [miniMenu.createMenuItem("Logout", assets.image`log out`), miniMenu.createMenuItem("Liam Store", img`
         ...ffffffffffff...
         ..f111111111111f..
         .f1ffffffffffff6f.
@@ -106,8 +105,7 @@ function desktop () {
         f777777771111777bf
         fbbbbbbbbbbbbbbbbf
         .ffffffffffffffff.
-        `),
-    miniMenu.createMenuItem("Show Name", img`
+        `), miniMenu.createMenuItem("Show Name", img`
         . . . . f f f f f f f f . . . . . 
         . . . f 1 1 1 1 1 1 1 6 f . . . . 
         . . . f 1 f 1 1 f 1 1 6 f . . . . 
@@ -125,8 +123,7 @@ function desktop () {
         f 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 f 
         . f f f f f f f f f f f f f f f . 
         . . . . . . . . . . . . . . . . . 
-        `)
-    ]
+        `)]
     myMenu = miniMenu.createMenuFromArray(homeMenuList)
     myMenu.setDimensions(scene.screenWidth(), scene.screenHeight())
     myMenu.setPosition(scene.screenWidth() / 2, scene.screenHeight() / 2)
@@ -143,6 +140,33 @@ function desktop () {
     myMenu.onButtonPressed(controller.A, function (selection, selectedIndex) {
         Menu_Press(selection)
     })
+}
+function Menu_Press (Value: string) {
+    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+    if (Value == "Logout") {
+        music.play(music.stringPlayable("C5 B A G F E D C ", 953), music.PlaybackMode.InBackground)
+        myMenu.close()
+        loginPrompt()
+    }
+    if (Value == "Show Name") {
+        game.splash("Your Name Is:", currentUser)
+    }
+    if (Value == "Liam Store") {
+        if (game.ask("Liam Store is UNFINISHED,", "enter anyways? -@TannerVoltageAlt")) {
+            game.splash("Ok. If anything happens,", "REBOOT! -@TannerVoltageAlt")
+            liamStore()
+        }
+    }
+    if (Value == "Voltage Click") {
+        myMenu.close()
+        if (!(blockSettings.exists("com.voltage.clicker/clicks" + loggedIn))) {
+            game.splash("Press A to click")
+            blockSettings.writeNumber("com.voltage.clicker/clicks" + loggedIn, 1)
+            voltageClickAgain()
+        } else {
+            voltageClickAgain()
+        }
+    }
 }
 function voltageClickAgain () {
     if (game.ask("Click?", "Clicks: " + blockSettings.readNumber("com.voltage.clicker/clicks" + loggedIn))) {
@@ -173,31 +197,6 @@ function newUser () {
 function liamStore () {
     myMenu.close()
     shopMenu = miniMenu.createMenuFromArray(shopApps)
-}
-function Menu_Press (Value: string) {
-    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
-    if (Value == "Logout") {
-        myMenu.close()
-        loginPrompt()
-    }
-    if (Value == "Show Name") {
-        game.splash("Your Name Is:", currentUser)
-    }
-    if (Value == "Liam Store") {
-        if (true) {
-        	
-        }
-    }
-    if (Value == "Voltage Click") {
-        myMenu.close()
-        if (!(blockSettings.exists("com.voltage.clicker/clicks" + loggedIn))) {
-            game.splash("Press A to click")
-            blockSettings.writeNumber("com.voltage.clicker/clicks" + loggedIn, 1)
-            voltageClickAgain()
-        } else {
-            voltageClickAgain()
-        }
-    }
 }
 let shopMenu: miniMenu.MenuSprite = null
 let Name = ""
