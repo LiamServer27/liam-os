@@ -1,23 +1,5 @@
 function loginPrompt () {
     shopComNames = ["com.tanner.clicker"]
-    shopApps = [miniMenu.createMenuItem("Voltage Click", img`
-        . . . . 6 6 6 6 6 6 6 . . . . 
-        . . 6 6 2 2 2 2 2 2 2 6 6 . . 
-        . 6 6 2 2 2 4 4 4 2 2 2 6 6 . 
-        . 6 2 2 2 4 4 2 4 4 2 2 2 6 . 
-        . c 2 2 4 4 4 4 4 4 4 2 2 c . 
-        . c 5 2 4 2 2 2 2 2 4 2 5 c . 
-        . c 5 5 2 2 2 2 2 2 2 5 5 c . 
-        . c 6 6 5 5 5 5 5 5 5 6 6 c . 
-        c c 6 6 6 6 6 6 6 6 6 6 6 c c 
-        c d c c 6 6 6 6 6 6 6 c c d c 
-        c d d d c c c c c c c d d d c 
-        c c e d d d d d d d d d e c c 
-        c c c c c e e e e e c c c c c 
-        c c e e e e e e e e e e e c c 
-        . c c e e e e e e e e e c c . 
-        . . . c c c c c c c c c . . . 
-        `)]
     scene.setBackgroundImage(assets.image`Background`)
     userMenuList = []
     usernames = blockSettings.readStringArray("usernames")
@@ -127,6 +109,26 @@ function desktop () {
         . . . . . . . . . . . . . . . . . 
         `)
     ])
+    for (let value of shopComNames) {
+        shopApps = [miniMenu.createMenuItem("Voltage Click", img`
+            . . . . 6 6 6 6 6 6 6 . . . . 
+            . . 6 6 2 2 2 2 2 2 2 6 6 . . 
+            . 6 6 2 2 2 4 4 4 2 2 2 6 6 . 
+            . 6 2 2 2 4 4 2 4 4 2 2 2 6 . 
+            . c 2 2 4 4 4 4 4 4 4 2 2 c . 
+            . c 5 2 4 2 2 2 2 2 4 2 5 c . 
+            . c 5 5 2 2 2 2 2 2 2 5 5 c . 
+            . c 6 6 5 5 5 5 5 5 5 6 6 c . 
+            c c 6 6 6 6 6 6 6 6 6 6 6 c c 
+            c d c c 6 6 6 6 6 6 6 c c d c 
+            c d d d c c c c c c c d d d c 
+            c c e d d d d d d d d d e c c 
+            c c c c c e e e e e c c c c c 
+            c c e e e e e e e e e e e c c 
+            . c c e e e e e e e e e c c . 
+            . . . c c c c c c c c c . . . 
+            `)]
+    }
     myMenu.setDimensions(scene.screenWidth(), scene.screenHeight())
     myMenu.setPosition(scene.screenWidth() / 2, scene.screenHeight() / 2)
     myMenu.setMenuStyleProperty(miniMenu.MenuStyleProperty.Rows, 4)
@@ -184,6 +186,7 @@ function Menu_Press (Value: string) {
     }
     if (Value == "Voltage Click") {
         myMenu.close()
+        music.play(music.createSong(assets.song`voltageClickTheme`), music.PlaybackMode.UntilDone)
         if (!(blockSettings.exists("com.voltage.clicker/clicks" + loggedIn))) {
             blockSettings.writeNumber("com.voltage.clicker/clicks" + loggedIn, 0)
             game.splash("Press A to click")
@@ -193,16 +196,19 @@ function Menu_Press (Value: string) {
             voltageClickAgain()
         }
     }
+    if (Value == "Liam Store") {
+        game.splash("WIP", "Come back soon! -@TannerVoltageAlt")
+    }
 }
 let shopMenu: miniMenu.MenuSprite = null
 let Name = ""
+let shopApps: miniMenu.MenuItem[] = []
 let myMenu: miniMenu.MenuSprite = null
 let loggedIn = 0
 let Curent_user = ""
 let userMenu: miniMenu.MenuSprite = null
 let usernames: string[] = []
 let userMenuList: miniMenu.MenuItem[] = []
-let shopApps: miniMenu.MenuItem[] = []
 let shopComNames: string[] = []
 music.stopAllSounds()
 scene.setBackgroundImage(img`
