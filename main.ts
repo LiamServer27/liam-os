@@ -152,7 +152,7 @@ function Menu_Press (Value: string) {
         game.splash("Your Name Is:", currentUser)
     }
     if (Value == "Liam Store") {
-        if (game.ask("Liam Store is UNFINISHED,", "enter anyways? -@TannerVoltageAlt")) {
+        if (game.ask("Liam Store is UNFINISHED,", "enter? -@TannerVoltageAlt")) {
             game.splash("Ok. If anything happens,", "REBOOT! -@TannerVoltageAlt")
             liamStore()
         }
