@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.51/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.3.1","target":"arcade","targetVersion":"1.12.51","repo":"liamserver27/liam-os"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.51/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.3.2","target":"arcade","targetVersion":"1.12.51","repo":"liamserver27/liam-os"}
 // total=2388483 new=10.43% cached=84.70% other=4.87%
 (function (ectx) {
 'use strict';
@@ -635,7 +635,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P33321(s) {
+function _main___P33663(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1360,13 +1360,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P33321.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/settings-blocks/main.ts","functionName":"<main>","argumentNames":[]}
-_main___P33321.continuations = [  ]
+_main___P33663.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"pxt_modules/settings-blocks/main.ts","functionName":"<main>","argumentNames":[]}
+_main___P33663.continuations = [  ]
 
-function _main___P33321_mk(s) {
+function _main___P33663_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P33321, depth: s.depth + 1,
+        parent: s, fn: _main___P33663, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2374,8 +2374,8 @@ switch (step) {
   case 0:
 
     s.value___32934 = undefined;
-    s.unnamed202___U1 = undefined;
-    s.unnamed203___U2 = undefined;
+    s.unnamed226___U1 = undefined;
+    s.unnamed227___U2 = undefined;
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
     r0 = pxsim_Array__push(s.tmp_0, "com.tanner.clicker");
@@ -2411,15 +2411,15 @@ switch (step) {
     r0 = s.retval;
     globals.usernames___32931 = (r0);
     s.value___32934 = (undefined);
-    s.unnamed202___U1 = (globals.usernames___32931);
-    s.unnamed203___U2 = (0);
+    s.unnamed226___U1 = (globals.usernames___32931);
+    s.unnamed227___U2 = (0);
   case 1:
-    s.tmp_0 = r0 = s.unnamed203___U2;
-    r0 = pxsim_Array__length(s.unnamed202___U1);
+    s.tmp_0 = r0 = s.unnamed227___U2;
+    r0 = pxsim_Array__length(s.unnamed226___U1);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 2; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed202___U1, s.unnamed203___U2);
+    r0 = pxsim_Array__getAt(s.unnamed226___U1, s.unnamed227___U2);
     s.value___32934 = (r0);
     s.tmp_2 = r0 = globals.userMenuList___32928;
     s.tmp_4 = miniMenu_createMenuItem__P4528_mk(s);
@@ -2431,11 +2431,11 @@ switch (step) {
     r0 = s.retval;
     s.tmp_3 = r0;
     r0 = pxsim_Array__push(s.tmp_2, s.tmp_3);
-    r0 = (s.unnamed203___U2 + 1);
-    s.unnamed203___U2 = (r0);
+    r0 = (s.unnamed227___U2 + 1);
+    s.unnamed227___U2 = (r0);
     { step = 1; continue; }
   case 2:
-    s.unnamed202___U1 = (undefined);
+    s.unnamed226___U1 = (undefined);
     s.tmp_0 = r0 = globals.userMenuList___32928;
     s.tmp_2 = miniMenu_createMenuItem__P4528_mk(s);
     s.tmp_2.arg0 = "Add";
@@ -2529,8 +2529,8 @@ function loginPrompt__P32914_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   value___32934: undefined,
-  unnamed202___U1: undefined,
-  unnamed203___U2: undefined,
+  unnamed226___U1: undefined,
+  unnamed227___U2: undefined,
 } }
 
 const _hex32923 = pxsim.BufferMethods.createBufferFromHex("87040f001000000000000000cccccc000066ccccdccdcc0c60265265c6edec0c60222265c6ddecce2622445266dcecce2642245266dceece2644245266dceece2624245266dceece2644245266dceece2642245266dceece2622445266dcecce60222265c6ddecce60265265c6edec0c0066ccccdccdcc0c00000000cccccc00")
@@ -76635,5 +76635,5 @@ const sprites_BaseSpriteSayRenderer__C2259_VT = mkVTable({
 
 const breakpoints = setupDebugger(1, ["transparency16___4552","shopComNames___32916","shopApps___32919","userMenuList___32928","usernames___32931","userMenu___32950","currentUser___32990","loggedIn___32993","homeMenuList___33020","myMenu___33032","listToSave___33193","shopMenu___33203","Name___33181"])
 
-return _main___P33321
+return _main___P33663
 })
