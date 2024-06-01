@@ -1,16 +1,4 @@
- 
 
-
-> Open this page at [https://liamserver27.github.io/liam-os/](https://liamserver27.github.io/liam-os/)
-
-## Use as Extension
-
-This repository can be added as an **extension** in MakeCode.
-
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/liamserver27/liam-os** and import
 
 ## Edit this project ![Build status badge](https://github.com/liamserver27/liam-os/workflows/MakeCode/badge.svg)
 
