@@ -346,6 +346,3 @@ if (!(blockSettings.exists("usernames"))) {
 }
 music.play(music.createSong(assets.song`welcome`), music.PlaybackMode.UntilDone)
 loginPrompt()
-game.onUpdate(function () {
-    info.changeScoreBy(1)
-})
