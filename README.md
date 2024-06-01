@@ -1,6 +1,6 @@
 
 
-## Edit this project [![MakeCode Arcade Release](https://github.com/LiamServer27/liam-os/actions/workflows/makecode-release.yml/badge.svg)](https://github.com/LiamServer27/liam-os/actions/workflows/makecode-release.yml)
+## Edit this project [![MakeCode Arcade Release](https://github.com/LiamServer27/liam-os/actions/workflows/makecode-release.yml/badge.svg)](https://github.com/LiamServer27/liam-os/actions/workflows/makecode-release.yml)[![pages-build-deployment](https://github.com/LiamServer27/liam-os/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/LiamServer27/liam-os/actions/workflows/pages/pages-build-deployment)
 
 To edit this repository in MakeCode.
 
