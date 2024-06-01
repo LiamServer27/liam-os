@@ -132,7 +132,6 @@ function desktop () {
     myMenu.setStyleProperty(miniMenu.StyleKind.DefaultAndSelected, miniMenu.StyleProperty.IconOnly, 1)
     myMenu.setStyleProperty(miniMenu.StyleKind.Default, miniMenu.StyleProperty.Background, 7)
     myMenu.setStyleProperty(miniMenu.StyleKind.Selected, miniMenu.StyleProperty.Background, 11)
-    myMenu.setTitle("Logout")
     myMenu.onSelectionChanged(function (selection, selectedIndex) {
         myMenu.setTitle(selection)
         music.play(music.createSoundEffect(WaveShape.Sine, 200, 600, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
@@ -158,7 +157,6 @@ function Menu_Press (Value: string) {
         }
     }
     if (Value == "Voltage Click") {
-        myMenu.close()
         if (!(blockSettings.exists("com.voltage.clicker/clicks" + loggedIn))) {
             game.splash("Press A to click")
             blockSettings.writeNumber("com.voltage.clicker/clicks" + loggedIn, 1)
@@ -166,6 +164,7 @@ function Menu_Press (Value: string) {
         } else {
             voltageClickAgain()
         }
+        myMenu.close()
     }
 }
 function voltageClickAgain () {
