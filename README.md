@@ -1,6 +1,6 @@
 
 
-## Edit this project ![Build status badge](https://github.com/liamserver27/liam-os/workflows/MakeCode/badge.svg)
+## Edit this project [![MakeCode Arcade Release](https://github.com/LiamServer27/liam-os/actions/workflows/makecode-release.yml/badge.svg)](https://github.com/LiamServer27/liam-os/actions/workflows/makecode-release.yml)
 
 To edit this repository in MakeCode.
 
