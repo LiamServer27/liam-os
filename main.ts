@@ -195,10 +195,19 @@ function newUser () {
     loginPrompt()
 }
 function liamStore () {
+    listToSave = blockSettings.readStringArray("moreApps" + loggedIn)
     myMenu.close()
     shopMenu = miniMenu.createMenuFromArray(shopApps)
+    myMenu.onButtonPressed(controller.A, function (selection, selectedIndex) {
+        if (true) {
+        	
+        } else {
+        	
+        }
+    })
 }
 let shopMenu: miniMenu.MenuSprite = null
+let listToSave: string[] = []
 let Name = ""
 let myMenu: miniMenu.MenuSprite = null
 let homeMenuList: miniMenu.MenuItem[] = []
